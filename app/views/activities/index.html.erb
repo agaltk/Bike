@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista tras</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Typ</th>
+      <th>Dystans</th>
+      <th>Czas trwania</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.activityType %></td>
+        <td><%= activity.distance %></td>
+        <td><%= activity.duration %></td>
+        <td><%= link_to 'Szczegoly', activity %></td>
+        <td><%= link_to 'Edytuj', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Usun', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Dodaj nowa', new_activity_path %>

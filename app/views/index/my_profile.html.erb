@@ -1,0 +1,18 @@
+
+
+<div class="profile">
+  <div class="image-profile"><%= image_tag(@user.avatar, :class => 'img-rounded', :alt => "You don't have avatar") %></div>
+  <div class="data-profile">
+
+  	<p><strong>Name: </strong> <%= @user.name %></p>
+  	<p><strong>Surname: </strong> <%= @user.surname %></p>
+  	<p><strong>Email: </strong> <%= @user.email %></p>
+  	<p><strong>Username: </strong> <%= @user.username %></p>
+  	<p><strong>Date of birth: </strong> <%= @user.birth_date.strftime("%d-%b-%y") if @user.birth_date != nil %></p>
+  	<%= link_to "Edit my profile", edit_user_registration_path %>
+  </div>
+  
+</div>
+
+
+

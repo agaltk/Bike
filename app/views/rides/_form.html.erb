@@ -1,0 +1,28 @@
+<div class="new-ride">
+  <%= simple_form_for @ride do |f| %>
+  <%= f.error_notification %>
+
+    
+  <div class="form-groups">
+    <%= f.input :date %>
+      </div>
+    <div class="form-groupp">  
+  <div class="inline">
+    <%= f.input :duration %>
+      </div>
+  <div class="inline">
+    <%= f.input :average %>
+      </div>
+  <div class="inline">
+    <%= f.input :max %>
+      </div>
+  <div class="inline">
+    <%= f.input :distance %>  
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, :class => "btn btn-default" %>
+ </div>
+<% end %>
+
+</div>

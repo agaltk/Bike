@@ -1,0 +1,56 @@
+
+<script type="text/javascript" charset="utf-8">
+
+
+$(function () {
+  
+  new Highcharts.Chart({
+    chart: { renderTo: 'container' },
+    title: { text: 'Stats by <%= session[:type_of_chart] %>' },
+    xAxis: { type: 'datetime' },
+    yAxis: {
+      title: { text: 'Maximum speed [km/h]' }
+    },
+   
+  tooltip: {
+      formatter: function () {
+        return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' 
+          + Highcharts.numberFormat(this.y, 2)+ 'km/h';
+      }
+    },
+
+
+
+series: [
+     {
+      name: "Maximum speed",
+      color: '#FF0066',
+      pointInterval: <%= interval()%>,
+      pointStart: <%= interval() %>,
+      data: <%= data("max") %>
+    },
+   ]
+
+
+
+
+
+    
+  });
+ 
+  });
+
+
+</script>
+<div id="container" style="width: 560px; height: 300px;"></div>
+<div class="options">
+  <ul class="nav nav-pills">
+    
+    
+    <%= link_to "By day", :controller => "charts", :action => "max", :type => "day" %>
+    <%= link_to "By week", :controller => "charts", :action => "max", :type => "week" %>
+    <%= link_to "By month", :controller => "charts", :action => "max", :type => "month" %>
+    <%= link_to "By year", :controller => "charts", :action => "max", :type => "year" %>
+
+  </ul>
+</div>

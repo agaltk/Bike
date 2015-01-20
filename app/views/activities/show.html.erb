@@ -1,0 +1,49 @@
+
+
+<div class="container">
+	<div class="row-fluid">
+        <div class="span10">
+        	<div style='width: 600px;'>
+  				<div id="map_google_aga" style='width: 600px; height: 400px;'></div>
+			</div>
+    	</div>
+    	
+      	<div class="span2">
+    		<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nazwa:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Activitytype:</strong>
+  <%= @activity.activityType %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>
+    	</div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+  var handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map_google_aga'}}, function(){
+  var polylines = handler.addPolylines(
+    [
+      <%= @activity.polyline.html_safe %>
+    ]
+    ,
+    { strokeColor: '#FF0000'}
+  );
+  handler.bounds.extendWith(polylines);
+  handler.fitMapToBounds();
+  });
+</script>
+

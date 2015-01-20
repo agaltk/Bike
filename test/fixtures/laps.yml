@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity_id: 
+  startTime: 2015-01-16 12:35:47
+  totalTimeSeconds: 1.5
+  distanceMeters: 1.5
+  calories: 1.5
+
+two:
+  activity_id: 
+  startTime: 2015-01-16 12:35:47
+  totalTimeSeconds: 1.5
+  distanceMeters: 1.5
+  calories: 1.5

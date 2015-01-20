@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track_id: 
+  latitudeDegrees: 1.5
+  longitudeDegrees: 1.5
+  altitudeMeters: 1.5
+  time: 2015-01-16 12:36:21
+
+two:
+  track_id: 
+  latitudeDegrees: 1.5
+  longitudeDegrees: 1.5
+  altitudeMeters: 1.5
+  time: 2015-01-16 12:36:21

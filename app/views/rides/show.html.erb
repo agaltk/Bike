@@ -1,0 +1,31 @@
+<div class="show">
+  <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date of ride:</strong>
+  <%= @ride.date %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @ride.duration %> min
+</p>
+
+<p>
+  <strong>Average speed:</strong>
+  <%= @ride.average %> km/h
+</p>
+
+<p>
+  <strong>Maximum speed: </strong>
+  <%= @ride.max %> km/h
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @ride.distance %> km
+</p>
+
+<%= link_to 'Edit', edit_ride_path(@ride) %> |
+<%= link_to 'Back', rides_path %>
+</div>
